@@ -1,0 +1,22 @@
+/*
+  hey there
+  here's a star *
+  a * b
+  multi-line done
+*/
+
+a = 1
+b = 2
+
+a > b
+
+// another comment
+
+/*
+multi line...
+*/
+
+/* unterminated  multiline...
+
+
+c = 2

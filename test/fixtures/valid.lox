@@ -1,0 +1,22 @@
+// Test is an example class
+class FunctionTest
+  fun hello {
+    print("hello world");
+
+    let a = 1 + 1;
+
+    print(a >= 2);
+
+    return a * 5 + 1;
+  }
+
+  /*
+    fun comment {
+        return 1 * 2;
+    }
+  */
+
+  fun test {
+    return 8 / 3; // example
+  }
+end
