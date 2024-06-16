@@ -105,6 +105,23 @@ public class Scanner {
                     // a comment goes until the end of the line
                     while (peek() != '\n' && !isAtEnd())
                         advance();
+                } else if (match('*')) {
+                    int startLine = line;
+                    // C-style comment: /* ... */
+                    while (!isAtEnd()) {
+                        if (match('*') && match('/')) {
+                            break;
+                        }
+                        if (peek() == '\n') {
+                            line++;
+                        }
+                        advance();
+                    }
+                    if (!isAtEnd()) {
+                        break;
+                    } else {
+                        Lox.error(line, "Unterminated multi-line comment (lines " + startLine + "-" + line + ")");
+                    }
                 } else {
                     addToken(TokenType.SLASH);
                 }
